@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Ravi Ramchand 991526202 -->
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/firstFragment">
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="org.variant2.RaviRamchand991526202.FirstFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_first">
+        <action
+            android:id="@+id/action_firstFragment_to_secondFragment"
+            app:destination="@id/secondFragment">
+
+            <argument
+                android:name="umbrella"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+            <argument
+                android:name="sunglasses"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+            <argument
+                android:name="passport"
+                android:defaultValue="@null"
+                app:argType="string"
+                app:nullable="true" />
+
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="org.variant2.RaviRamchand991526202.SecondFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_second">
+        <action
+            android:id="@+id/action_secondFragment_to_nameFragment"
+            app:destination="@id/nameFragment">
+            <argument
+                android:name="count"
+                app:argType="integer" />
+        </action>
+        <action
+            android:id="@+id/action_secondFragment_to_firstFragment"
+            app:destination="@id/firstFragment" />
+        <argument
+            android:name="umbrella"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="sunglasses"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="passport"
+            android:defaultValue="@null"
+            app:argType="string"
+            app:nullable="true" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/nameFragment"
+        android:name="org.variant2.RaviRamchand991526202.NameFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_name">
+        <action
+            android:id="@+id/action_nameFragment_to_selectionFragment"
+            app:destination="@id/selectionFragment">
+
+            <argument
+                android:name="selection"
+                android:defaultValue="0"
+                app:argType="integer" />
+
+        </action>
+        <argument
+            android:name="count"
+            app:argType="integer" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/selectionFragment"
+        android:name="org.variant2.RaviRamchand991526202.SelectionFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_selection">
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <argument
+            android:name="selection"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <argument
+            android:name="count"
+            app:argType="integer" />
+    </fragment>
+</navigation>
